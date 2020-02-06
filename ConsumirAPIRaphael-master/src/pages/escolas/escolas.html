@@ -1,0 +1,28 @@
+<!-- EDITAR A PARTIR DAS PROPRIEDADES DO MODEL -->
+<ion-header>
+  <ion-navbar>
+    <ion-title>Escolas</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item-sliding *ngFor="let e of escolas">
+      <button ion-item (click)="editEscola(e.id)">
+        <h2>{{e.nome_fantasia}}</h2>
+      </button>
+
+      <ion-item-options side="left">
+          <button ion-button color="danger" (click)="removeEscola(e.id)">
+            <ion-icon name="trash"></ion-icon>
+            Excluir
+          </button>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
+  <ion-fab right bottom>
+      <button ion-fab color="light" (click)="addEscola()">
+        <ion-icon name="add"></ion-icon>
+      </button>
+  </ion-fab>
+</ion-content>
